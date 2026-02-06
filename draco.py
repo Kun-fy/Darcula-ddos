@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from scapy.all import *
+import ntp3
 import sys
 import threading
 import time
